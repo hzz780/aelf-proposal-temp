@@ -17,6 +17,8 @@ const PROPOSAL_CONTRACT_ADDRESS = '2JT8xzjR5zJ8xnBvdgBZdSjfbokFSbF5hDdpUCbXeWaJf
 // const PROPOSAL_CONTRACT_ADDRESS = '4SGo3CUj3PPh3hC5oXV83WodyUaPHuz4trLoSTGFnxe84nqNr';
 const END_POINT = 'https://aelf-public-node.aelf.io';
 // const END_POINT = 'https://tdvv-public-node.aelf.io'; // sidechain tdvv
+const EXPLORER_URL = 'https://aelfscan.io/AELF/tx/'; // AELF
+// const EXPLORER_URL = 'https://aelfscan.io/tDVV/tx/'; // AELF
 
 // or init with options
 export default function BridgePage() {
@@ -94,9 +96,11 @@ export default function BridgePage() {
     </SButton>
     <div className="break-all">
       {transactionId && transactionId.TransactionId && <>
-        <div>Transaction Id: </div>
+        <div>Transaction Id:</div>
         <div>{transactionId.TransactionId}</div>
-        <a href={`https://tdvv-explorer.aelf.io/tx/${transactionId.TransactionId}`}>Click to explorer</a>
+        <div>&nbsp;</div>
+        <a href={`${EXPLORER_URL}${transactionId.TransactionId}`}>Click to explorer</a>
+        <div>&nbsp;</div>
       </>}
     </div>
     <div className="break-all">Proposal id: {PROPOSAL_ID}</div>
